@@ -1,0 +1,28 @@
+﻿
+<!--<div class="row">
+    <div class="col-md-6">
+        <iframe id="myPlayer" height="170" width="700" src="https://www.youtube.com/embed/DjB1OvEYMhY?enablejsapi=1" type="text/html" frameborder="0"></iframe>
+        <div ng-show="!showPlayer" style="margin-left: 20px; margin-top: -14px;">
+            <img width="700" height="170" src="/Content/images/h-havefunatkidsites.png" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        buttons go here....
+    </div>
+</div>-->
+
+<div>
+    <iframe id="myPlayer" height="170" width="700" src="https://www.youtube.com/embed/DjB1OvEYMhY?enablejsapi=1" type="text/html" frameborder="0"></iframe>
+    <div ng-show="!showPlayer" style="margin-left: 20px; margin-top: -14px;">
+        <img width="700" height="170" src="/Content/images/h-havefunatkidsites.png" />
+    </div>
+</div>
+<div ng-show="showPlayer" style="float: right; margin-right: 30px; margin-top:-150px; font-size: 7em; cursor: pointer;">
+    <span class="glyphicon glyphicon-step-backward" ng-click="previousClicked()"></span>
+    <span ng-show="playerState == 2" class="glyphicon glyphicon-play" ng-click="playClicked()"></span>
+    <span ng-show="playerState == 1" class="glyphicon glyphicon-pause" ng-click="pauseClicked()"></span>
+    <span class="glyphicon glyphicon-step-forward" ng-click="nextClicked()"></span>
+</div>
+
+
+ 

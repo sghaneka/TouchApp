@@ -1,0 +1,74 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Track Editor</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="trackName" class="col-sm-3 control-label">Track Name:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="vm.trackName" id="trackName" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="videoId" class="col-sm-3 control-label">Video Id:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="vm.videoId" id="videoId" placeholder="Video Id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="playListId" class="col-sm-3 control-label">Google PlayList Id:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="playListId" ng-model="vm.playListId" placeholder="PlayList Id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="startTimeId" class="col-sm-3 control-label">Start Time:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control"
+                       id="startTimeId"
+                       ng-model="vm.startTime"
+                       placeholder="Start Time">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="duration" class="col-sm-3 control-label">Duration:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="duration" ng-model="vm.duration" placeholder="duration">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="endTime" class="col-sm-3 control-label">End Time:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="endTime" ng-model="vm.endTime" placeholder="End Time">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Selected PlayLists:</label>
+            <div class="col-sm-4">
+                <select ng-model="vm.selectedPlayList" ng-options="x.name for x in vm.playList"></select>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" ng-model="vm.playListName" placeholder="Play List Name" />
+                <button ng-click="vm.addPlayList()">Add PlayList</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Selected Image:</label>
+            <div class="col-sm-4">
+                <select ng-model="vm.selectedImage" ng-options="x.name for x in vm.imageList"></select>
+                <br />
+                <img ng-src="{{vm.selectedImage.imageUrl}}" width="100" />
+            </div>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" ng-model="vm.imageUrl" placeholder="Image url" />
+                <input type="text" class="form-control" ng-model="vm.imageName" placeholder="Image Name" />
+                <img ng-src="{{vm.imageUrl}}" width="100" />
+                <button ng-click="vm.addImage()">Add Image</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.save()">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Close</button>
+</div>

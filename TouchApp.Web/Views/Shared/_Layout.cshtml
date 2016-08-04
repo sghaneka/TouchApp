@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/toastr.css" rel="stylesheet" />
+    <link href="~/Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-touch.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls.js"></script>
+</head>
+
+<body ng-app="Touch" ng-strict-di ng-controller="VideoScreenController as vm">
+
+    <div class="header">
+        <ta-you-tube-player class="header" video="vm.selectedVideo" random-mode="vm.randomMode">
+        </ta-you-tube-player>
+    </div>
+
+
+    @RenderBody()
+
+    @*<script src="~/app/app.module.js"></script>
+    <script src="~/app/common/onFinishRender.js"></script>
+    <script src="~/app/common/imageOnLoad.js"></script>
+    <script src="~/app/services/DataService.js"></script>
+    <script src="~/app/layout/VideoScreenController.js"></script>
+    <script src="~/app/tracks/TrackEditorController.js"></script>
+    <script src="~/app/components/taYouTubePlayer.js"></script>
+    <script src="~/Scripts/toastr.js"></script>*@
+    @Scripts.Render("~/bundles/app")
+
+    <script>
+        var Jaju = Jaju || {};
+        (function ($) {
+            $.fn.uniformHeight = function () {
+                var maxHeight = 0,
+                    max = Math.max;
+
+                return this.each(function () {
+                    maxHeight = max(maxHeight, $(this).height());
+                }).height(maxHeight);
+            }
+            
+        })(jQuery);
+        
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

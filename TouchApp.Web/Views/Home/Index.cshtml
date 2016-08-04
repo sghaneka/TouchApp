@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+		$(document).ready(function ()
+		{
+		   
+		});
+    </script>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 style="margin-bottom: 30px;"><span class="label label-default">Play List</span></h3>
+                </div>
+                <div class="col-md-6 col-md-offset-2" style="margin-top: 10px;">
+                    Random Mode<br/><input type="radio" name="randomMode" value="on" ng-model="vm.randomMode" />On <input type="radio" name="randomMode" value="off" ng-model="vm.randomMode" />Off
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li ng-class="{'active': x.playListId == vm.selectedPlayList}" ng-repeat="x in vm.playList">
+                            <a href="#" ng-click="vm.selectedPlayList = x.playListId">{{x.name}}</a>
+                        </li>
+                    </ul>
+                    <button class="btn-default top-buffer" ng-click="vm.addTracks()">Add Tracks...</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <div class="galleryItem" ng-repeat="vid in vm.videos" ng-show="!vm.loading">
+                <img ng-src="{{vid.trackImage.imageUrl}}" class="jajuThumbnail" ng-click="vm.click(vid)" image-on-load="vm.imageLoaded()" />
+                <p>{{vid.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
